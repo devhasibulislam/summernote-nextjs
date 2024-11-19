@@ -55,7 +55,6 @@ function App() {
         callbacks: {
           onChange: (contents: string) => {
             console.log(contents);
-
             setContent(contents);
           },
         },
@@ -71,20 +70,16 @@ function App() {
   }, []);
 
   return (
-    <section className="h-screen w-screen">
-      <div className="h-full w-full p-4 grid grid-cols-12 gap-x-4">
-        <div className="md:col-span-6 col-span-12 flex flex-col gap-y-8">
-          <h1 className="lg:text-5xl md:text-3xl text-xl lg:font-bold md:font-semibold font-medium">
-            Summernote in React
-          </h1>
-          <div style={{ all: "unset" }} ref={editorRef} id="summernote"></div>
+    <section className="custom-section">
+      <div className="custom-grid">
+        <div className="custom-editor">
+          <h1 className="custom-title">Summernote in React</h1>
+          <div ref={editorRef} id="summernote"></div>
         </div>
-        <div className="md:col-span-6 col-span-12 flex flex-col gap-y-8">
-          <h1 className="lg:text-5xl md:text-3xl text-xl lg:font-bold md:font-semibold font-medium">
-            Content Preview
-          </h1>
+        <div className="custom-preview">
+          <h1 className="custom-title">Content Preview</h1>
           <div
-            className="prose"
+            className="custom-prose"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
