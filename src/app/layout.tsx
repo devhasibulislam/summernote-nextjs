@@ -35,6 +35,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {children}
+
         {/* Load jQuery before Summernote */}
         <Script
           src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -44,7 +46,6 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"
           strategy="beforeInteractive"
         />
-        {children}
       </body>
     </html>
   );

@@ -54,6 +54,8 @@ function App() {
         codeviewIframeFilter: true,
         callbacks: {
           onChange: (contents: string) => {
+            console.log(contents);
+
             setContent(contents);
           },
         },
@@ -75,13 +77,16 @@ function App() {
           <h1 className="lg:text-5xl md:text-3xl text-xl lg:font-bold md:font-semibold font-medium">
             Summernote in React
           </h1>
-          <div ref={editorRef} id="summernote"></div>
+          <div style={{ all: "unset" }} ref={editorRef} id="summernote"></div>
         </div>
         <div className="md:col-span-6 col-span-12 flex flex-col gap-y-8">
           <h1 className="lg:text-5xl md:text-3xl text-xl lg:font-bold md:font-semibold font-medium">
             Content Preview
           </h1>
-          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          <div
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
       </div>
     </section>
